@@ -1,10 +1,17 @@
 import sqlite3
-conection=sqlite3.connect('C:\\atlasdb.db')
+conection=sqlite3.connect('C:\\Atlas\\Atlas.db')
 
 mycursor=conection.cursor()
 
-def agregar(tabla, id, nombre, apellido, rol, correo, contraseña, numerodocumento, tipodocumento, estado):
-    sentencia= f"INSERT INTO {tabla} VALUES ('{id}', '{nombre}', '{apellido}', '{rol}', '{correo}', '{contraseña}', '{numerodocumento}', '{tipodocumento}', '{estado}')"
+def agregar():
+    NumeroDocumento=int(input("Ingrese el numero del documento del nuevo usuario: "))
+    tipodocumento=input("Ingrese el tipo de documento: ")
+    nombre=input("ingrese el nombre: ")
+    apellido=input("ingrese el apellido: ")
+    correo=input("ingrese el correo: ")
+    contraseña=input("ingrese la contraseña: ")
+
+    sentencia= f"INSERT INTO Usuario VALUES ('{NumeroDocumento}', '{tipodocumento}', '{nombre}', '{apellido}', '{correo}', '{contraseña}', 'Activo')"
     mycursor.execute(sentencia)
     conection.commit()
     print("Registro Creado Con Exito")
@@ -20,6 +27,4 @@ def consultar(campo1, tabla, campo2, operador, dato):
     mycursor.execute(sentencia)
     print(mycursor.execute(sentencia).fetchall())
 
-#agregar("usuario", 2, "edward", "oliveros", "administrador", "santiago.oliveros07@gmail.com", "1234567", 12345678, "CC", "Habilitado")
-#modificar("usuario", "estadousuario", "Activo", "2")
-#consultar("*", "usuario", "idusuario", "=", 31)
+agregar()
