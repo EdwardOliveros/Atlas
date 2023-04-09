@@ -9,5 +9,6 @@ class usuario:
         self.numerodocumentousuario=numerodocumentousuario
         self.tipodocumentousuario=tipodocumentousuario
         self.estadousuario=estadousuario
+        
     def getNombre(self):
         return self.nombreusuario
