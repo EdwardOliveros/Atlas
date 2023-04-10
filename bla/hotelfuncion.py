@@ -25,4 +25,4 @@ def consultar(campo1,tabla,campo2,operador,dato):
 
 #agregar("Hotel",5556, "Vegeta", 15)
 #consultar("*","Hotel","id","+",1)
-modificar("hotel","nombre","OlimpUs","222")
+#modificar("hotel","nombre","OlimpUs","222")
